@@ -36,24 +36,23 @@ def resourceSufficient(drink):
     for item in MENU:
         if item == drink:
             DRINKingredients= MENU[item]['ingredients'] #this returns all the  ingredients in each drink like this {'water': 250, 'milk': 100, 'coffee': 24}
-            for x in DRINKingredients:
-                if x == resources:
-                    cmp(DRINKingredients.value(),resources.value())
 
 print(resources)
-typeOfDrink = input('What would you like? (espresso, latte, or cappuccino): ').lower()
-if typeOfDrink == 'off':
-    exit()
-elif typeOfDrink == 'espresso':
-    print('One espresso')
-elif typeOfDrink == 'latte':
-    print('One latte')
-elif typeOfDrink == 'cappuccino':
-    print('One cappuccino')
-elif typeOfDrink== 'report':
-    for item in resources:
-        print(f'{item}: {resources[item]}')
-    print(f'Money: ${totalMoney}')
+
+while True:
+    choice = input('What would you like? (espresso, latte, or cappuccino): ').lower()
+    if choice== 'off':
+        exit()
+    elif choice == 'espresso':
+        print('One espresso')
+    elif choice == 'latte':
+        print('One latte')
+    elif choice == 'cappuccino':
+        print('One cappuccino')
+    elif choice== 'report':
+        for item in resources:
+            print(f'{item}: {resources[item]}')
+        print(f'Money: ${totalMoney}')
 
 
-resourceSufficient(typeOfDrink)
+resourceSufficient(choice)
